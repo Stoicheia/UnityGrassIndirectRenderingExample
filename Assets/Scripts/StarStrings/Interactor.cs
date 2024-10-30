@@ -6,6 +6,8 @@ namespace MagicGrass.StarStrings
 {
     public class Interactor : MonoBehaviour
     {
+        public IInteractable InRange => _inRange;
+        
         [Header("Config")]
         [SerializeField] private float _range;
         [SerializeField] private LayerMask _interactMask;

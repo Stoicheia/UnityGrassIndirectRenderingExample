@@ -2,6 +2,7 @@
 {
     public interface IInteractable
     {
-        public void Interact();
+        public void Interact(Interactor interactor);
+        public string PromptText { get; }
     }
 }

@@ -9,15 +9,18 @@ namespace MagicGrass.StarStrings
     [RequireComponent(typeof(AudioSource), typeof(Rigidbody))]
     public class StringInteractable : MonoBehaviour, IInteractable
     {
+        [SerializeField] private string _name;
         [SerializeField] private List<StringInteractionParams> _callAndResponses;
-        // pickup sprite
+        // first person sprite data here
         private int _callResponseIndex;
 
         private AudioSource _audioSource;
+        private Rigidbody _rb;
 
         private void Awake()
         {
             _audioSource = GetComponent<AudioSource>();
+            _rb = GetComponent<Rigidbody>();
         }
 
         public void PlayAgainst(StarString starString)
@@ -39,10 +42,12 @@ namespace MagicGrass.StarStrings
             interacted.PlayAudio(toPlay.Response);
             interacted.Enable();
         }
-        public void Interact()
+        public void Interact(Interactor interactor)
         {
             Destroy(gameObject);
         }
+
+        public string PromptText => "Press E to Pickup " + _name;
 
         public void Launch()
         {

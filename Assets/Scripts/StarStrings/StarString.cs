@@ -29,9 +29,11 @@ namespace MagicGrass.StarStrings
             _isInteractable = true;
         }
 
-        public void Interact()
+        public void Interact(Interactor interactor)
         {
             
         }
+        
+        public string PromptText => "Press E to Use String";
     }
 }
