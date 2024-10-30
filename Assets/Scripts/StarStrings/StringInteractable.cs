@@ -6,10 +6,11 @@ using UnityEngine;
 
 namespace MagicGrass.StarStrings
 {
-    [RequireComponent(typeof(AudioSource))]
+    [RequireComponent(typeof(AudioSource), typeof(Rigidbody))]
     public class StringInteractable : MonoBehaviour, IInteractable
     {
         [SerializeField] private List<StringInteractionParams> _callAndResponses;
+        // pickup sprite
         private int _callResponseIndex;
 
         private AudioSource _audioSource;
@@ -38,8 +39,12 @@ namespace MagicGrass.StarStrings
             interacted.PlayAudio(toPlay.Response);
             interacted.Enable();
         }
-
         public void Interact()
+        {
+            Destroy(gameObject);
+        }
+
+        public void Launch()
         {
             
         }
