@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="AudioFile" id="{99d65507-bf4a-4f98-ac4c-fbf8f9ffff10}">
+		<property name="assetPath">
+			<value>CutChords/Multi D2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>9.6000226757369607</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4ef993ea-648d-430d-9ebc-c1fc4a19d73e}</destination>
+		</relationship>
+	</object>
+</objects>

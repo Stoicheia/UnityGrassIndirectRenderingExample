@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="EncodableAsset" id="{686f3626-7ddc-4f4f-b9b2-69e963abf91e}">
+		<property name="assetPath">
+			<value>CutChords/</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{4ef993ea-648d-430d-9ebc-c1fc4a19d73e}</destination>
+		</relationship>
+	</object>
+</objects>
