@@ -37,7 +37,7 @@ namespace MagicGrass.SoundPads
         private void HandleTriggerPad(SoundPad pad)
         {
             DeactivateAll();
-            pad.SetState(SoundPadLevel.Good);
+            pad.SetState(SoundPadLevel.Active);
             _audioPlayer.Play(pad.Chord);
         }
 
@@ -65,6 +65,24 @@ namespace MagicGrass.SoundPads
             foreach (var p in _pads)
             {
                 p.SetState(SoundPadLevel.Inactive);
+            }
+        }
+
+        public void DisableAll()
+        {
+            foreach (var p in _pads)
+            {
+                p.SetState(SoundPadLevel.Disabled);
+                p.IsActive = false;
+            }
+        }
+
+        public void EnableAll()
+        {
+            foreach (var p in _pads)
+            {
+                p.SetState(SoundPadLevel.Inactive);
+                p.IsActive = true;
             }
         }
     }

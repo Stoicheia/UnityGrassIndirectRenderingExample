@@ -78,13 +78,7 @@
 		<property name="length">
 			<value>39</value>
 		</property>
-		<property name="startOffset">
-			<value>1.5</value>
-		</property>
 		<property name="name" />
-		<property name="looping">
-			<value>true</value>
-		</property>
 		<relationship name="audioFile">
 			<destination>{1624c662-091e-4ccc-aeb7-b900f83402bd}</destination>
 		</relationship>

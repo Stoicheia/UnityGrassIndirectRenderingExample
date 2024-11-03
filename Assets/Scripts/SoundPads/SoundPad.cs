@@ -15,6 +15,7 @@ namespace MagicGrass.SoundPads
 
         public FunctionalChord Chord => _chord;
         public float Bounciness => _bounciness;
+        [field: SerializeField, ReadOnly] public bool IsActive { get; set; }
 
         public bool OverrideConfig;
         [SerializeField] private List<MeshRenderer> _renderers;
@@ -46,6 +47,7 @@ namespace MagicGrass.SoundPads
 
         private void OnCollisionEnter(Collision col)
         {
+            if (!IsActive) return;
             Vector3 collisionNormal = col.GetContact(0).normal;
             if (collisionNormal.y >= -0.9f)
             {
@@ -81,6 +83,6 @@ namespace MagicGrass.SoundPads
     [Serializable]
     public enum SoundPadLevel
     {
-        Bad, Neutral, Good, Inactive
+        Disabled, Inactive, Highlight, Active
     }
 }
