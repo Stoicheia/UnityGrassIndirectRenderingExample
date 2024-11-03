@@ -9,6 +9,7 @@ namespace MagicGrass.Controller
     {
         private FirstPersonController _controller;
         [SerializeField] private float _jumpStrengthModifier;
+        private float _lastLandTime;
 
         private void Awake()
         {
@@ -17,7 +18,11 @@ namespace MagicGrass.Controller
 
         public void LandOnPad(SoundPad pad)
         {
-            _controller.Jump(_jumpStrengthModifier);
+            float jumpForce = _jumpStrengthModifier * pad.Bounciness;
+            _controller.Jump(jumpForce, true);
+            float timeBetweenLands = Time.time - _lastLandTime;
+            _lastLandTime = Time.time;
+            Debug.Log($"Time between lands: {timeBetweenLands}");
         }
     }
 

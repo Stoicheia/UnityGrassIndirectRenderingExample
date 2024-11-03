@@ -49,7 +49,8 @@ namespace MagicGrass.SoundPads
                 SoundPad pad = child.GetComponent<SoundPad>();
                 if (pad == null) continue;
                 childPads.Add(pad);
-                pad.SetConfig(PadConfig);
+                if(!pad.OverrideConfig)
+                    pad.SetConfig(PadConfig);
             }
             return childPads;
         }
@@ -72,5 +73,6 @@ namespace MagicGrass.SoundPads
     public struct SoundPadConfig
     {
         [OdinSerialize] public Dictionary<SoundPadLevel, Material> PadStateToMaterial;
+        [OdinSerialize] public float Bounciness;
     }
 }

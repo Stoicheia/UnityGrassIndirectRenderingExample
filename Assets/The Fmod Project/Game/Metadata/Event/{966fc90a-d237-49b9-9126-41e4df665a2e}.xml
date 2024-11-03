@@ -76,7 +76,14 @@
 	</object>
 	<object class="SingleSound" id="{0a781e56-dacf-4f0e-8a78-ebc4bcddd07c}">
 		<property name="length">
-			<value>40.800022675736962</value>
+			<value>39</value>
+		</property>
+		<property name="startOffset">
+			<value>1.5</value>
+		</property>
+		<property name="name" />
+		<property name="looping">
+			<value>true</value>
 		</property>
 		<relationship name="audioFile">
 			<destination>{1624c662-091e-4ccc-aeb7-b900f83402bd}</destination>
