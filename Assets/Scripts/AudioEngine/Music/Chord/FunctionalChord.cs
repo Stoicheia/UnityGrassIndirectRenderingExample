@@ -63,6 +63,15 @@ namespace AudioEngine.Music
             _extensions = extensions;
             ChordInversion = chordInversion;
         }
+
+        public static FunctionalChord CMajorNine()
+        {
+            return new FunctionalChord(FunctionalChord.Sign.None,
+                FunctionalChord.TriadDegree.I,
+                FunctionalChord.Quality.Major,
+                new List<FunctionalChord.Extension>() {Extension.Major7, Extension.Major9},
+                FunctionalChord.Inversion.Root);
+        }
         
         private static Dictionary<TriadDegree, NoteLetter> _rootsInC = new Dictionary<TriadDegree, NoteLetter>()
         {

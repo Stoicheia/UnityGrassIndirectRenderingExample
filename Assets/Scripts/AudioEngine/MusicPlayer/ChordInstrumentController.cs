@@ -19,6 +19,7 @@ namespace AudioEngine.MusicPlayer
     {
         public FunctionalChord? ActiveChord; 
         public event Action<bool> OnRelease;
+        public event Action OnTimeout;
         public event Action<FunctionalChord> OnPlayChord;
         
         [Header("Dependencies")]
@@ -53,9 +54,16 @@ namespace AudioEngine.MusicPlayer
             if (Time.time > _timeSinceLastChord + _maxHoldTime)
             {
                 ReleaseCurrentChord(false);
+                OnTimeout?.Invoke();
             }
         }
 
+        [Button]
+        public void TestPlayChord()
+        {
+            PlayChord(FunctionalChord.CMajorNine());
+        }
+        
         public void PlayChord(FunctionalChord chordDef, bool replace = true)
         {
             if (!replace && chordDef.Equals(ActiveChord))
