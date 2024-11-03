@@ -13,15 +13,20 @@ namespace MagicGrass.SoundPads
         [SerializeField] private EventReference _music;
         [SerializeField] private int _offsetMs = 1202;
         private bool _isPlaying;
-        
+
+        private void Awake()
+        {
+            var instance = RuntimeManager.CreateInstance(_music);
+            instance.getDescription(out var desc);
+            desc.loadSampleData();
+        }
+
         [Button]
         public void Play()
         {
             _musicPlayer.EventReference = _music;
             _musicPlayer.Play();
-            _musicPlayer.Stop();
-            _musicPlayer.EventInstance.setTimelinePosition(_offsetMs);
-            _musicPlayer.Play();
+            Debug.Log(_musicPlayer.EventInstance.setTimelinePosition(_offsetMs));
             _isPlaying = true;
         }
 

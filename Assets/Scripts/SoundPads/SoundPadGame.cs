@@ -19,11 +19,13 @@ namespace MagicGrass.SoundPads
         private void OnEnable()
         {
             SoundPad.OnTrigger += HandleTriggerPad;
+            SoundPadMusic.OnMusicEnd += HandleMusicEnd;
         }
-
+        
         private void OnDisable()
         {
             SoundPad.OnTrigger -= HandleTriggerPad;
+            SoundPadMusic.OnMusicEnd -= HandleMusicEnd;
         }
 
 
@@ -45,9 +47,15 @@ namespace MagicGrass.SoundPads
             Init();
         }
         
+        private void HandleMusicEnd()
+        {
+            End();
+        }
+        
         private void HandleTriggerPad(SoundPad pad)
         {
             if (_hasStarted || pad != _firstPad) return;
+            _hasStarted = true;
             _manager.EnableAll();
             _musicPlayer.Play();
         }
