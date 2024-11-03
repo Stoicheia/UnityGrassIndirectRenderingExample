@@ -2,6 +2,7 @@
 using FMODUnity;
 using Sirenix.OdinInspector;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace MagicGrass.SoundPads
 {
@@ -38,6 +39,8 @@ namespace MagicGrass.SoundPads
                 _isPlaying = false;
                 OnMusicEnd?.Invoke();
             }
+            
+            
         }
     }
 }
