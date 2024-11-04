@@ -45,13 +45,13 @@ namespace MagicGrass.SoundPads
         private List<SoundPad> GetChildPads()
         {
             List<SoundPad> childPads = new List<SoundPad>();
-            foreach (Transform child in transform)
+            SoundPad[] pads = GetComponentsInChildren<SoundPad>();
+            foreach (SoundPad child in pads)
             {
-                SoundPad pad = child.GetComponent<SoundPad>();
-                if (pad == null) continue;
-                childPads.Add(pad);
-                if(!pad.OverrideConfig)
-                    pad.SetConfig(PadConfig);
+                if (child == null) continue;
+                childPads.Add(child);
+                if(!child.OverrideConfig)
+                    child.SetConfig(PadConfig);
             }
             return childPads;
         }
