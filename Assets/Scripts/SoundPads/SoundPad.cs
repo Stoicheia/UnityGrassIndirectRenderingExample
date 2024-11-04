@@ -15,6 +15,7 @@ namespace MagicGrass.SoundPads
 
         public FunctionalChord Chord => _chord;
         public float Bounciness => _bounciness;
+        public SoundPadState State => _state;
         [field: SerializeField, ReadOnly] public bool IsActive { get; set; }
 
         public bool OverrideConfig;

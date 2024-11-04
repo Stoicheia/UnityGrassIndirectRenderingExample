@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using AudioEngine.Music;
 using FMODUnity;
 using Sirenix.OdinInspector;
 using Sirenix.Serialization;
@@ -54,6 +55,11 @@ namespace MagicGrass.SoundPads
             }
             return childPads;
         }
+
+        public SoundPad GetPadByChord(FunctionalChord chord)
+        {
+            return _pads.Find(x => x.Chord.Equals(chord));
+        }
         
         private void HandleChordStop()
         {
@@ -64,7 +70,19 @@ namespace MagicGrass.SoundPads
         {
             foreach (var p in _pads)
             {
-                p.SetState(SoundPadLevel.Inactive);
+                if(p.State.Level != SoundPadLevel.Highlight)
+                    p.SetState(SoundPadLevel.Inactive);
+            }
+        }
+        
+        public void UnhighlightAll()
+        {
+            foreach (var p in _pads)
+            {
+                if (p.State.Level == SoundPadLevel.Highlight)
+                {
+                    p.SetState(SoundPadLevel.Inactive);
+                }
             }
         }
 
@@ -73,7 +91,7 @@ namespace MagicGrass.SoundPads
             foreach (var p in _pads)
             {
                 p.SetState(SoundPadLevel.Disabled);
-                p.IsActive = false;
+                p.IsActive = true;
             }
         }
 
