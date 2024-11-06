@@ -19,7 +19,7 @@ namespace MagicGrass.SoundPads
         {
             if (_reassignPadsOnAwake)
             {
-                _pads = GetChildPads();
+                UpdatePads();
             }
         }
 
@@ -37,9 +37,19 @@ namespace MagicGrass.SoundPads
         
         private void HandleTriggerPad(SoundPad pad)
         {
+            if (!pad.Chord.HasValue) return;
             DeactivateAll();
             pad.SetState(SoundPadLevel.Active);
-            _audioPlayer.Play(pad.Chord);
+            if (pad.Chord != null)
+            {
+                _audioPlayer.Play(pad.Chord.Value);
+            }
+        }
+
+        public void UpdatePads()
+        {
+            var pads = GetChildPads();
+            _pads = pads;
         }
 
         private List<SoundPad> GetChildPads()

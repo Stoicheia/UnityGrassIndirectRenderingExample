@@ -465,11 +465,12 @@ public class FirstPersonController : MonoBehaviour
             isGrounded = false;
         }
     }
-
+    
     public void Jump(float forceModifier = 1, bool force = false)
     {
         // Adds force to the player rigidbody to jump
-        if (isGrounded || force)
+        bool isGoingDown = rb.velocity.y < 0;
+        if (isGrounded || (force && isGoingDown))
         {
             rb.AddForce(0f, jumpPower*forceModifier, 0f, ForceMode.Impulse);
             isGrounded = false;

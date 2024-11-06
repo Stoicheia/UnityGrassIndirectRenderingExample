@@ -13,7 +13,7 @@ namespace MagicGrass.SoundPads
         public static Action<SoundPad, SoundPadState> OnSetState;
         public static Action<SoundPad> OnTrigger;
 
-        public FunctionalChord Chord => _chord;
+        public FunctionalChord? Chord => _chord;
         public float Bounciness => _bounciness;
         public SoundPadState State => _state;
         [field: SerializeField, ReadOnly] public bool IsActive { get; set; }
@@ -22,7 +22,7 @@ namespace MagicGrass.SoundPads
         [SerializeField] private List<MeshRenderer> _renderers;
         [OdinSerialize] private Dictionary<SoundPadLevel, Material> _stateToMaterial;
         [OdinSerialize] private float _bounciness = 1;
-        [OdinSerialize] private FunctionalChord _chord;
+        [OdinSerialize] private FunctionalChord? _chord;
         [SerializeField][ReadOnly] private SoundPadState _state;
         
         public void SetState(SoundPadLevel level)
