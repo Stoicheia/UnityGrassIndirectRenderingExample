@@ -23,8 +23,9 @@ namespace MagicGrass.SoundPads
         }
 
         [Button]
-        public void Play()
+        public void Play(EventReference song)
         {
+            _music = song;
             _musicPlayer.EventReference = _music;
             _musicPlayer.Play();
             Debug.Log(_musicPlayer.EventInstance.setTimelinePosition(_offsetMs));

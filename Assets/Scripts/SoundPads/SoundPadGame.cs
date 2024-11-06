@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using AudioEngine.Music;
+using FMODUnity;
 using TMPro;
 using UnityEngine;
 
@@ -10,6 +11,7 @@ namespace MagicGrass.SoundPads
     {
         [SerializeField] private SoundPadManager _manager;
         [SerializeField] private SoundPadMusic _musicPlayer;
+        [SerializeField] private EventReference _song;
         [SerializeField] private SoundPad _firstPad;
         [SerializeField] private float _secondsBetweenSwitch;
         [SerializeField] private List<FunctionalChord> _correctAnswers;
@@ -97,7 +99,7 @@ namespace MagicGrass.SoundPads
                 if (_hasStarted || pad != _firstPad) return;
                 _hasStarted = true;
                 _manager.EnableAll();
-                _musicPlayer.Play();
+                _musicPlayer.Play(_song);
                 _answerIndex = 1;
                 _lastSwitchTime = Time.time;
                 HighlightAnswer();
