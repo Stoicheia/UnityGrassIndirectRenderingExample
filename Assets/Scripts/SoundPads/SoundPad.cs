@@ -13,7 +13,11 @@ namespace MagicGrass.SoundPads
         public static Action<SoundPad, SoundPadState> OnSetState;
         public static Action<SoundPad> OnTrigger;
 
-        public FunctionalChord? Chord => _chord;
+        public FunctionalChord? Chord
+        {
+            get => _chord;
+            set => _chord = value;
+        }
         public float Bounciness => _bounciness;
         public SoundPadState State => _state;
         [field: SerializeField, ReadOnly] public bool IsActive { get; set; }

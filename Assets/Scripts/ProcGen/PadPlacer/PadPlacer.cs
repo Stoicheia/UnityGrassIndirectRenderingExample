@@ -76,6 +76,7 @@ namespace MagicGrass.ProcGen.PadPlacer
                     Vector2 offset = _padSlotSize*new Vector2(x, y) + _padSlotSize*Vector2.one/2;
                     Vector3 position = new Vector3(offset.x, transform.position.y, offset.y) + _origin.position;
                     SoundPad padInstance = Instantiate(_padPrefab, position, transform.rotation, _origin);
+                    padInstance.Chord = myChord;
                 }
             }
             
