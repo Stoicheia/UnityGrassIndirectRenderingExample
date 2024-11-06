@@ -113,6 +113,11 @@ namespace MagicGrass.SoundPads
                 p.IsActive = true;
             }
         }
+
+        public void SetActiveGame(SoundPadGame game)
+        {
+            // TODO
+        }
     }
 
     [Serializable]
