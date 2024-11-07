@@ -67,15 +67,16 @@ namespace MagicGrass.ProcGen.PadPlacer
                 DestroyImmediate(child.gameObject);
             }
 
-            
+            float scaledSlotSize = _padSlotSize * _padScale;
             for (int y = 0; y < _gridDimensions.y; y++)
             {
                 for (int x = 0; x < _gridDimensions.x; x++)
                 {
                     FunctionalChord myChord = _chordGrid[x, y];
-                    Vector2 offset = _padSlotSize*new Vector2(x, y) + _padSlotSize*Vector2.one/2;
+                    Vector2 offset = scaledSlotSize*new Vector2(x, y) + scaledSlotSize*Vector2.one/2;
                     Vector3 position = new Vector3(offset.x, transform.position.y, offset.y) + _origin.position;
                     SoundPad padInstance = Instantiate(_padPrefab, position, transform.rotation, _origin);
+                    padInstance.transform.localScale = Vector3.one * _padScale;
                     padInstance.Chord = myChord;
                 }
             }

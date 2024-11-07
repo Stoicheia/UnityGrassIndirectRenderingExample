@@ -19,7 +19,7 @@ namespace MagicGrass.Controller
         public void LandOnPad(SoundPad pad)
         {
             float jumpForce = _jumpStrengthModifier * pad.Bounciness;
-            _controller.Jump(jumpForce, false);
+            _controller.RequestForceJump(jumpForce);
             float timeBetweenLands = Time.time - _lastLandTime;
             _lastLandTime = Time.time;
             Debug.Log($"Time between lands: {timeBetweenLands}");

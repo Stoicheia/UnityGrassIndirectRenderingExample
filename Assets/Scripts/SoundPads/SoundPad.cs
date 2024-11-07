@@ -10,6 +10,7 @@ namespace MagicGrass.SoundPads
 {
     public class SoundPad : SerializedMonoBehaviour
     {
+        public static int COOLDOWN_FRAMES = 2;
         public static Action<SoundPad, SoundPadState> OnSetState;
         public static Action<SoundPad> OnTrigger;
 
@@ -41,6 +42,11 @@ namespace MagicGrass.SoundPads
             OnSetState?.Invoke(this, _state);
         }
 
+        private void Update()
+        {
+            _cooldownCounter++;
+        }
+
         private void UpdateMaterial()
         {
             SoundPadLevel _padLevel = _state.Level;
@@ -50,9 +56,10 @@ namespace MagicGrass.SoundPads
             }
         }
 
+        private int _cooldownCounter;
         private void OnCollisionEnter(Collision col)
         {
-            if (!IsActive) return;
+            if (!IsActive || _cooldownCounter < COOLDOWN_FRAMES) return;
             Vector3 collisionNormal = col.GetContact(0).normal;
             if (collisionNormal.y >= -0.9f)
             {
@@ -64,6 +71,7 @@ namespace MagicGrass.SoundPads
             
             interactor.LandOnPad(this);
             RequestActivate();
+            _cooldownCounter = 0;
         }
 
         private void RequestActivate()
