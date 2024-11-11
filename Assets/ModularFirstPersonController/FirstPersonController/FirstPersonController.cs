@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using UnityEngine.UI;
 
 public class FirstPersonController : MonoBehaviour
@@ -198,9 +199,9 @@ public class FirstPersonController : MonoBehaviour
 
     float camRotation;
 
-    private void Update()
+    private void LateUpdate()
     {
-        #region Camera
+          #region Camera
 
         // Control camera movement
         if(cameraCanMove)
@@ -269,6 +270,11 @@ public class FirstPersonController : MonoBehaviour
 
         #endregion
         #endregion
+    }
+
+    private void Update()
+    {
+      
 
         #region Sprint
 
