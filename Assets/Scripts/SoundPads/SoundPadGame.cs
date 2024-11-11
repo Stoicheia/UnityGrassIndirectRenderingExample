@@ -66,6 +66,11 @@ namespace MagicGrass.SoundPads
                 OnRequestSwitchHighlight();
                 _lastSwitchTime = _lastSwitchTime + _secondsBetweenSwitch;
             }
+
+            if (_hasStarted)
+            {
+                HighlightAnswer();
+            }
         }
 
         private void OnRequestSwitchHighlight()

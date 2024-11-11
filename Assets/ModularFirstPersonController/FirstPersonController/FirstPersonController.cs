@@ -116,6 +116,8 @@ public class FirstPersonController : MonoBehaviour
     private Vector3 jointOriginalPos;
     private float timer = 0;
 
+    public float startingPitch = -15;
+
     #endregion
 
     private void Awake()
@@ -135,6 +137,8 @@ public class FirstPersonController : MonoBehaviour
             sprintRemaining = sprintDuration;
             sprintCooldownReset = sprintCooldown;
         }
+
+        pitch = startingPitch;
     }
 
     void Start()
@@ -333,30 +337,7 @@ public class FirstPersonController : MonoBehaviour
         forceJumpCooldownCounter++;
 
         #endregion
-
-        #region Crouch
-
-        if (enableCrouch)
-        {
-            if(Input.GetKeyDown(crouchKey) && !holdToCrouch)
-            {
-                Crouch();
-            }
-            
-            if(Input.GetKeyDown(crouchKey) && holdToCrouch)
-            {
-                isCrouched = false;
-                Crouch();
-            }
-            else if(Input.GetKeyUp(crouchKey) && holdToCrouch)
-            {
-                isCrouched = true;
-                Crouch();
-            }
-        }
-
-        #endregion
-
+        
         CheckGround();
 
         if(enableHeadBob)
@@ -405,7 +386,7 @@ public class FirstPersonController : MonoBehaviour
 
                     if (isCrouched)
                     {
-                        Crouch();
+                        //Crouch();
                     }
 
                     if (hideBarWhenFull && !unlimitedSprint)
@@ -479,16 +460,11 @@ public class FirstPersonController : MonoBehaviour
             rb.AddForce(0f, jumpPower*forceModifier, 0f, ForceMode.Impulse);
             isGrounded = false;
         }
-
-        // When crouched and using toggle system, will uncrouch for a jump
-        if(isCrouched && !holdToCrouch)
-        {
-            Crouch();
-        }
     }
 
     private void Crouch()
     {
+        return;
         // Stands player up to full height
         // Brings walkSpeed back up to original speed
         if(isCrouched)

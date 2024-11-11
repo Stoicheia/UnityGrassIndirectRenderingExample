@@ -20,6 +20,7 @@ MonoBehaviour:
     Data4: -600606345
   Banks:
   - {fileID: -2882240294567292262}
+  - {fileID: 8521848253340163344}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
@@ -51,6 +52,34 @@ MonoBehaviour:
   IsGlobal: 0
   Labels: []
   Exists: 1
+--- !u!114 &-5147080049212545831
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Song Nara
+  m_EditorClassIdentifier: 
+  Path: event:/Song Nara
+  Guid:
+    Data1: -1386960078
+    Data2: 1263134162
+    Data3: 845768105
+    Data4: -728938954
+  Banks:
+  - {fileID: -2882240294567292262}
+  - {fileID: 8521848253340163344}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 29863
 --- !u!114 &-2882240294567292262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -66,11 +95,39 @@ MonoBehaviour:
   Path: Assets/The Fmod Project/Game/Build/Desktop/Demo.bank
   Name: Demo
   StudioPath: bank:/Demo
-  lastModified: 638416502912887279
+  lastModified: 638669424185002090
   FileSizes:
   - Name: Desktop
-    Value: 5548320
+    Value: 6064096
   Exists: 1
+--- !u!114 &-2501967547658764164
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Song Rainbow
+  m_EditorClassIdentifier: 
+  Path: event:/Song Rainbow
+  Guid:
+    Data1: 2075473498
+    Data2: 1235095524
+    Data3: 165766325
+    Data4: -896770079
+  Banks:
+  - {fileID: -2882240294567292262}
+  - {fileID: 8521848253340163344}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 18124
 --- !u!114 &-1950931145325201639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -91,13 +148,14 @@ MonoBehaviour:
     Data4: 777676511
   Banks:
   - {fileID: -2882240294567292262}
+  - {fileID: 8521848253340163344}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 40800
+  Length: 39000
 --- !u!114 &-1801191711813391874
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -118,6 +176,7 @@ MonoBehaviour:
     Data4: 1282914140
   Banks:
   - {fileID: -2882240294567292262}
+  - {fileID: 8521848253340163344}
   IsStream: 0
   Is3D: 0
   IsOneShot: 0
@@ -146,12 +205,14 @@ MonoBehaviour:
   - {fileID: -1950931145325201639}
   - {fileID: -7602227441569943861}
   - {fileID: -1801191711813391874}
+  - {fileID: -2501967547658764164}
+  - {fileID: -5147080049212545831}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8521848253340163344}
   StringsBanks:
   - {fileID: 1658296435281781148}
-  cacheTime: 638416502912932291
+  cacheTime: 638669424186169332
   cacheVersion: 131620
 --- !u!114 &1658296435281781148
 MonoBehaviour:
@@ -168,10 +229,10 @@ MonoBehaviour:
   Path: Assets/The Fmod Project/Game/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638416502912932291
+  lastModified: 638669424186169332
   FileSizes:
   - Name: Desktop
-    Value: 1062
+    Value: 1146
   Exists: 1
 --- !u!114 &8521848253340163344
 MonoBehaviour:
@@ -188,8 +249,8 @@ MonoBehaviour:
   Path: Assets/The Fmod Project/Game/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638416502912922316
+  lastModified: 638669424186129319
   FileSizes:
   - Name: Desktop
-    Value: 1486
+    Value: 6065056
   Exists: 1

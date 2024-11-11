@@ -30,6 +30,7 @@
 		</relationship>
 		<relationship name="banks">
 			<destination>{0bd90933-2f6a-4fc9-b433-f392183b54c3}</destination>
+			<destination>{be5db082-d2ed-4a73-a2e8-4fc48fa332e1}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{e66b804e-34ee-4f62-95e5-8275783d9dc8}">
@@ -78,7 +79,6 @@
 		<property name="length">
 			<value>39</value>
 		</property>
-		<property name="name" />
 		<relationship name="audioFile">
 			<destination>{1624c662-091e-4ccc-aeb7-b900f83402bd}</destination>
 		</relationship>

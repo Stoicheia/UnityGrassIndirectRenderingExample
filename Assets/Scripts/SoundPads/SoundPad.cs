@@ -65,6 +65,8 @@ namespace MagicGrass.SoundPads
             {
                 return;
             }
+
+            if (col.collider.material == null) return;
             GameObject against = col.gameObject;
             ISoundPadInteractor interactor = against.GetComponent<ISoundPadInteractor>();
             if (interactor == null) return;

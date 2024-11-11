@@ -20,6 +20,8 @@ namespace MagicGrass.SoundPads
             var instance = RuntimeManager.CreateInstance(_music);
             instance.getDescription(out var desc);
             desc.loadSampleData();
+            RuntimeManager.LoadBank("Demo", true);
+            RuntimeManager.LoadBank("Master", true);
         }
 
         [Button]
