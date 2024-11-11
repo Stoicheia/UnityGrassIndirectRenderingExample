@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Butterfly
+  m_Name: Butterfly 4
   m_Shader: {fileID: -6465566751694194690, guid: f60228c573320f14280dc5309feac69f, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -52,7 +52,7 @@ Material:
     - _QueueOffset: 0
     - _SimpleNoise: 25
     m_Colors:
-    - _Color: {r: 23.01129, g: 22.271248, b: 5.2969394, a: 1}
+    - _Color: {r: 16.126627, g: 5.3010297, b: 23.01129, a: 1}
     - _NoiseSpeed: {r: -0.1, g: 0, b: 0, a: 0}
     - _Speed: {r: -0.5, g: 0, b: 0, a: 0}
   m_BuildTextureStacks: []

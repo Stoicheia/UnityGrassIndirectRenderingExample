@@ -44,6 +44,7 @@ namespace MagicGrass.SoundPads
         public void Init()
         {
             DisableAll();
+            _musicPlayer.Stop();
             _firstPad.IsActive = true;
             _firstPad.SetState(SoundPadLevel.Highlight);
             _hasStarted = false;

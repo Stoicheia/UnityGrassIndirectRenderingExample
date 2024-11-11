@@ -12,6 +12,8 @@ public class ButterflyMover : MonoBehaviour
     [SerializeField] private float _moveSpeed;
     [SerializeField] private float _moveSpeedVariance;
     [SerializeField] private float _waitTime;
+    [SerializeField] private float _teleportDistance;
+    [SerializeField] private float _teleportSpeedMultiplier = 100;
     private Vector3 _from;
     private Vector3 _to;
     private bool _isMoving = false;
@@ -27,7 +29,14 @@ public class ButterflyMover : MonoBehaviour
     private void Update()
     {
         if (!_isMoving) return;
-        Vector3 pos = Vector3.MoveTowards(transform.position, _to, _trueMoveSpeed);
+        float distToCenter = Vector3.Distance(transform.position, _center.position);
+        float toMove = _trueMoveSpeed;
+        if (distToCenter >= _teleportDistance)
+        {
+            toMove *= _teleportSpeedMultiplier;
+        }
+        Vector3 pos = Vector3.MoveTowards(transform.position, _to, toMove*Time.deltaTime);
+        //transform.LookAt(_to);
         transform.position = pos;
         if (Vector3.Distance(transform.position, _to) < 0.05f)
         {

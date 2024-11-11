@@ -40,8 +40,11 @@ namespace MagicGrass.SoundPads
                 _isPlaying = false;
                 OnMusicEnd?.Invoke();
             }
-            
-            
+        }
+
+        public void Stop()
+        {
+            _musicPlayer.Stop();
         }
     }
 }
