@@ -27,7 +27,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 21221
+  Length: 18875
 --- !u!114 &-8060236567251987513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55,7 +55,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 20683
+  Length: 19559
 --- !u!114 &-7602227441569943861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -135,7 +135,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 29863
+  Length: 31800
 --- !u!114 &-4564940154359379527
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -163,7 +163,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 31309
+  Length: 17083
 --- !u!114 &-2882240294567292262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,10 +179,10 @@ MonoBehaviour:
   Path: Assets/The Fmod Project/Game/Build/Desktop/Demo.bank
   Name: Demo
   StudioPath: bank:/Demo
-  lastModified: 638669571857222417
+  lastModified: 638669627390724611
   FileSizes:
   - Name: Desktop
-    Value: 7132288
+    Value: 6937344
   Exists: 1
 --- !u!114 &-2501967547658764164
 MonoBehaviour:
@@ -211,7 +211,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 18124
+  Length: 18000
 --- !u!114 &-1950931145325201639
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -300,7 +300,7 @@ MonoBehaviour:
   - {fileID: 8521848253340163344}
   StringsBanks:
   - {fileID: 1658296435281781148}
-  cacheTime: 638669571859072704
+  cacheTime: 638669627392155339
   cacheVersion: 131620
 --- !u!114 &1658296435281781148
 MonoBehaviour:
@@ -317,7 +317,7 @@ MonoBehaviour:
   Path: Assets/The Fmod Project/Game/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638669571859072704
+  lastModified: 638669627392155339
   FileSizes:
   - Name: Desktop
     Value: 1292
@@ -349,7 +349,7 @@ MonoBehaviour:
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 17892
+  Length: 17500
 --- !u!114 &8521848253340163344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -365,8 +365,8 @@ MonoBehaviour:
   Path: Assets/The Fmod Project/Game/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638669571859026188
+  lastModified: 638669627392094732
   FileSizes:
   - Name: Desktop
-    Value: 7133280
+    Value: 6938336
   Exists: 1
