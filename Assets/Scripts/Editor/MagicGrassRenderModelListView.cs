@@ -1,4 +1,4 @@
-using UnityEngine;
+/*using UnityEngine;
 using UnityEditor;
 using UnityEditor.UIElements;
 using UnityEngine.UIElements;
@@ -49,7 +49,7 @@ public class MagicGrassRenderModelListView : VisualElement
             // sources.Add(new IndirectDrawController.MagicGrassRenderModel());
             listView.RefreshItems();
         //    _magicGrassRenderModelsProperty.serializedObject.ApplyModifiedProperties();
-        });*/
+        });#1#
         listView.itemsRemoved += (list) =>
         {
             _magicGrassRenderModelsProperty.arraySize--;
@@ -158,4 +158,4 @@ public class MagicGrassRenderModelListView : VisualElement
         };
         Add(listView);
     }
-}
+}*/

@@ -25,6 +25,7 @@ namespace MagicGrass.SoundPads
 
         public bool OverrideConfig;
         [SerializeField] private List<MeshRenderer> _renderers;
+        [SerializeField] private bool _activeAlways;
         [OdinSerialize] private Dictionary<SoundPadLevel, Material> _stateToMaterial;
         [OdinSerialize] private float _bounciness = 1;
         [OdinSerialize] private FunctionalChord? _chord;
@@ -45,6 +46,10 @@ namespace MagicGrass.SoundPads
         private void Update()
         {
             _cooldownCounter++;
+            if (_activeAlways)
+            {
+                IsActive = true;
+            }
         }
 
         private void UpdateMaterial()

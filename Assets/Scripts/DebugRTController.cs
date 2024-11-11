@@ -1,4 +1,4 @@
-using System;
+/*using System;
 using System.Collections;
 using System.Collections.Generic;
 using MagicGrass;
@@ -81,4 +81,4 @@ public class DebugRTController : MonoBehaviour
         _image.material.SetTexture("_MainTex", _rt);
         RenderTexture.active = originRT;
     }
-}
+}*/

@@ -78,6 +78,7 @@ namespace MagicGrass.ProcGen.PadPlacer
                     SoundPad padInstance = Instantiate(_padPrefab, position, transform.rotation, _origin);
                     padInstance.transform.localScale = Vector3.one * _padScale;
                     padInstance.Chord = myChord;
+                    padInstance.name = myChord.ToString();
                 }
             }
             

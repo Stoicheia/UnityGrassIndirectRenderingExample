@@ -1,5 +1,61 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-8086400469480224400
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Song Love
+  m_EditorClassIdentifier: 
+  Path: event:/Song Love
+  Guid:
+    Data1: 40873186
+    Data2: 1299068605
+    Data3: -1551438421
+    Data4: 2084893924
+  Banks:
+  - {fileID: -2882240294567292262}
+  - {fileID: 8521848253340163344}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 21221
+--- !u!114 &-8060236567251987513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Song Gala
+  m_EditorClassIdentifier: 
+  Path: event:/Song Gala
+  Guid:
+    Data1: 2127143584
+    Data2: 1317122484
+    Data3: -669630829
+    Data4: 386158620
+  Banks:
+  - {fileID: -2882240294567292262}
+  - {fileID: 8521848253340163344}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 20683
 --- !u!114 &-7602227441569943861
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -80,6 +136,34 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 29863
+--- !u!114 &-4564940154359379527
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Song Ellinia
+  m_EditorClassIdentifier: 
+  Path: event:/Song Ellinia
+  Guid:
+    Data1: -947350875
+    Data2: 1084995182
+    Data3: 10799771
+    Data4: 1323072107
+  Banks:
+  - {fileID: -2882240294567292262}
+  - {fileID: 8521848253340163344}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 31309
 --- !u!114 &-2882240294567292262
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -95,10 +179,10 @@ MonoBehaviour:
   Path: Assets/The Fmod Project/Game/Build/Desktop/Demo.bank
   Name: Demo
   StudioPath: bank:/Demo
-  lastModified: 638669424185002090
+  lastModified: 638669552862055139
   FileSizes:
   - Name: Desktop
-    Value: 6064096
+    Value: 7141728
   Exists: 1
 --- !u!114 &-2501967547658764164
 MonoBehaviour:
@@ -207,12 +291,16 @@ MonoBehaviour:
   - {fileID: -1801191711813391874}
   - {fileID: -2501967547658764164}
   - {fileID: -5147080049212545831}
+  - {fileID: 4625561342289240040}
+  - {fileID: -8060236567251987513}
+  - {fileID: -4564940154359379527}
+  - {fileID: -8086400469480224400}
   EditorParameters: []
   MasterBanks:
   - {fileID: 8521848253340163344}
   StringsBanks:
   - {fileID: 1658296435281781148}
-  cacheTime: 638669424186169332
+  cacheTime: 638669552863175688
   cacheVersion: 131620
 --- !u!114 &1658296435281781148
 MonoBehaviour:
@@ -229,11 +317,39 @@ MonoBehaviour:
   Path: Assets/The Fmod Project/Game/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638669424186169332
+  lastModified: 638669552863175688
   FileSizes:
   - Name: Desktop
-    Value: 1146
+    Value: 1292
   Exists: 1
+--- !u!114 &4625561342289240040
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Song Matilda
+  m_EditorClassIdentifier: 
+  Path: event:/Song Matilda
+  Guid:
+    Data1: -1045680348
+    Data2: 1196703283
+    Data3: -1075121734
+    Data4: 1886892184
+  Banks:
+  - {fileID: -2882240294567292262}
+  - {fileID: 8521848253340163344}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 17892
 --- !u!114 &8521848253340163344
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -249,8 +365,8 @@ MonoBehaviour:
   Path: Assets/The Fmod Project/Game/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638669424186129319
+  lastModified: 638669552863150398
   FileSizes:
   - Name: Desktop
-    Value: 6065056
+    Value: 7142720
   Exists: 1
