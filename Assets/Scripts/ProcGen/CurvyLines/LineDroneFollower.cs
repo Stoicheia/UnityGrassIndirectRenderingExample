@@ -24,5 +24,15 @@ namespace MagicGrass.ProcGen.CurvyLines
         {
             _line.colorGradient = c;
         }
+
+        public void SetWidth(float w)
+        {
+            _line.widthMultiplier = w;
+        }
+
+        public void SetExpiry(float e)
+        {
+            _line.time = e;
+        }
     }
 }

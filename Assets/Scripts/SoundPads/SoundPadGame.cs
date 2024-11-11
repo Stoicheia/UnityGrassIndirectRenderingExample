@@ -9,12 +9,14 @@ namespace MagicGrass.SoundPads
 {
     public class SoundPadGame : MonoBehaviour
     {
-        [SerializeField] private SoundPadManager _manager;
+        public static Action<SoundPadGame> OnStart;
+        
+        //[SerializeField] private SoundPadManager _manager;
         [SerializeField] private SoundPadMusic _musicPlayer;
         [SerializeField] private EventReference _song;
         [SerializeField] private SoundPad _firstPad;
         [SerializeField] private float _secondsBetweenSwitch;
-        [SerializeField] private List<FunctionalChord> _correctAnswers;
+        [SerializeField] private List<SoundPad> _correctAnswers;
         [SerializeField] private List<SoundPad> _answerSet;
         
         private bool _hasStarted;
@@ -41,10 +43,19 @@ namespace MagicGrass.SoundPads
 
         public void Init()
         {
-            _manager.DisableAll();
+            DisableAll();
             _firstPad.IsActive = true;
             _firstPad.SetState(SoundPadLevel.Highlight);
             _hasStarted = false;
+        }
+
+        private void DisableAll()
+        {
+            foreach (var p in _answerSet)
+            {
+                p.SetState(SoundPadLevel.Disabled);
+                p.IsActive = true;
+            }
         }
 
         private void Update()
@@ -79,12 +90,22 @@ namespace MagicGrass.SoundPads
 
         private void HighlightAnswer()
         {
-            _manager.UnhighlightAll();
-            FunctionalChord chord = _correctAnswers[_answerIndex%_correctAnswers.Count];
-            SoundPad foundPad = _answerSet.Find(x => x.Chord.Equals(chord));
+            UnhighlightAll();
+            SoundPad foundPad = _correctAnswers[_answerIndex%_correctAnswers.Count];
             if (foundPad != null)
             {
                 foundPad.SetState(SoundPadLevel.Highlight);
+            }
+        }
+        
+        public void UnhighlightAll()
+        {
+            foreach (var p in _answerSet)
+            {
+                if (p.State.Level == SoundPadLevel.Highlight)
+                {
+                    p.SetState(SoundPadLevel.Inactive);
+                }
             }
         }
         
@@ -97,12 +118,22 @@ namespace MagicGrass.SoundPads
             else
             {
                 if (_hasStarted || pad != _firstPad) return;
+                OnStart?.Invoke(this);
                 _hasStarted = true;
-                _manager.EnableAll();
+                EnableAll();
                 _musicPlayer.Play(_song);
                 _answerIndex = 1;
                 _lastSwitchTime = Time.time;
                 HighlightAnswer();
+            }
+        }
+        
+        public void EnableAll()
+        {
+            foreach (var p in _answerSet)
+            {
+                p.SetState(SoundPadLevel.Inactive);
+                p.IsActive = true;
             }
         }
     }

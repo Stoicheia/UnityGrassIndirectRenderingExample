@@ -14,6 +14,7 @@ namespace MagicGrass.SoundPads
         [SerializeField] private SoundPadAudioPlayer _audioPlayer;
         [SerializeField] private List<SoundPad> _pads;
         [SerializeField] private bool _reassignPadsOnAwake;
+        private SoundPadGame _activeGame;
 
         private void Awake()
         {
@@ -27,13 +28,26 @@ namespace MagicGrass.SoundPads
         {
             SoundPad.OnTrigger += HandleTriggerPad;
             SoundPadAudioPlayer.OnCease += HandleChordStop;
+            SoundPadGame.OnStart += HandleGameStart;
         }
 
         private void OnDisable()
         {
             SoundPad.OnTrigger -= HandleTriggerPad;
             SoundPadAudioPlayer.OnCease -= HandleChordStop;
+            SoundPadGame.OnStart -= HandleGameStart;
         }
+        
+        private void HandleGameStart(SoundPadGame game)
+        {
+            if (_activeGame != null)
+            {
+                _activeGame.End();
+            }
+
+            _activeGame = game;
+        }
+
         
         private void HandleTriggerPad(SoundPad pad)
         {

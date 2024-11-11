@@ -461,7 +461,7 @@ public class FirstPersonController : MonoBehaviour
     }
 
     private float? requestForceJump = null;
-    private int forceJumpCooldownFrames = 5;
+    private int forceJumpCooldownFrames = 1;
     private int forceJumpCooldownCounter = 0;
     public void RequestForceJump(float modifier)
     {
@@ -474,7 +474,7 @@ public class FirstPersonController : MonoBehaviour
     {
         // Adds force to the player rigidbody to jump
         bool isGoingDown = rb.velocity.y < 0;
-        if (isGrounded || (force && isGoingDown))
+        if (isGrounded || (force))
         {
             rb.AddForce(0f, jumpPower*forceModifier, 0f, ForceMode.Impulse);
             isGrounded = false;
