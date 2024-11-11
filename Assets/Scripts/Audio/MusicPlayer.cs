@@ -5,6 +5,6 @@ namespace MagicGrass.Audio
 {
     public class MusicPlayer : MonoBehaviour
     {
-        [SerializeField] private EventReference _test;
+        [SerializeField] private EventReference _test; 
     }
 }
